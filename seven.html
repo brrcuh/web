@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu desplegable</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu-horizontal">
+            <li><a href="inicio.html">inicio</a></li>
+            <li>
+                <a href="#">programas javascript</a>
+                <ul class="menu-vertical">
+                    <li><a href="unojava.html">programa 1</a></li>
+                    <li><a href="dosjava.html">programa 2</a></li>
+                    <li><a href="tresjava.html">programa 3</a></li>
+                    <li><a href="cuatrojava.html">programa 4</a></li>
+                    <li><a href="quintojava.html">programa 5</a></li>
+                    <li><a href="sexto.html">programa 6</a></li>
+                    <li><a href="septimojava.html">programa 7</a></li>
+                    <li><a href="octavojava.html">programa 8</a></li>
+                    <li><a href="nuevejava.html">programa 9</a></li>
+                    <li><a href="decimojava.html">programa 10</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">programas php</a>
+                <ul class="menu-vertical">
+                  <li><a href="one.html">programa1</a></li>
+                  <li><a href="two.html">programa2</a></li>
+                  <li><a href="three.html">programa3</a></li>
+                  <li><a href="four.html">programa4</a></li>
+                  <li><a href="five.html">programa5</a></li>
+                  <li><a href="six.html">programa6</a></li>
+                  <li><a href="seven.html">programa7</a></li>
+                  <li><a href="eigh.html">programa8</a></li>
+                  <li><a href="nine.html">programa9</a></li>
+                </ul>
+            </li>
+            <li><a href="#">otros</a></li>
+        </ul>
+    </nav>
+
+    <h1>multiplicar un numero por si mismo </h1>
+    <form id="multiplicacionForm">
+        <label for="numeroBase">Número Base:</label>
+        <input type="number" id="numeroBase" name="numeroBase"><br><br>
+        
+        <label for="veces">Número de Veces a Multiplicar:</label>
+        <input type="number" id="veces" name="veces" min="1"><br><br>
+        
+        <label for="multiplicador">Multiplicador:</label>
+        <input type="number" id="multiplicador" name="multiplicador"><br><br>
+        
+        <button type="button" onclick="multiplicarNumeros()">Calcular</button>
+      </form>
+      
+      <p id="resultado"></p>
+      
+      <script>
+      function multiplicarNumeros() {
+        var numeroBase = parseFloat(document.getElementById("numeroBase").value);
+        var veces = parseInt(document.getElementById("veces").value);
+        var multiplicador = parseFloat(document.getElementById("multiplicador").value);
+        var resultado = numeroBase;
+      
+        if (isNaN(numeroBase) || isNaN(veces) || isNaN(multiplicador) || veces < 1) {
+          document.getElementById("resultado").innerHTML = "Por favor, ingresa valores válidos.";
+        } else {
+          for (var i = 0; i < veces; i++) {
+            resultado *= multiplicador;
+          }
+          document.getElementById("resultado").innerHTML = "El resultado de la multiplicación es: " + resultado;
+        }
+      }
+      </script>
+
+
+    
+</body>
+</html>

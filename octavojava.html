@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu desplegable</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu-horizontal">
+            <li><a href="inicio.html">inicio</a></li>
+            <li>
+                <a href="#">programas javascript</a>
+                <ul class="menu-vertical">
+                    <li><a href="unojava.html">programa 1</a></li>
+                    <li><a href="dosjava.html">programa 2</a></li>
+                    <li><a href="tresjava.html">programa 3</a></li>
+                    <li><a href="cuatrojava.html">programa 4</a></li>
+                    <li><a href="quintojava.html">programa 5</a></li>
+                    <li><a href="sexto.html">programa 6</a></li>
+                    <li><a href="septimojava.html">programa 7</a></li>
+                    <li><a href="octavojava.html">programa 8</a></li>
+                    <li><a href="nuevejava.html">programa 9</a></li>
+                    <li><a href="decimojava.html">programa 10</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">programas php</a>
+                <ul class="menu-vertical">
+                    <li><a href="one.html">programa1</a></li>
+                    <li><a href="two.html">programa2</a></li>
+                    <li><a href="three.html">programa3</a></li>
+                    <li><a href="four.html">programa4</a></li>
+                    <li><a href="five.html">programa5</a></li>
+                    <li><a href="six.html">programa6</a></li>
+                    <li><a href="seven.html">programa7</a></li>
+                    <li><a href="eigh.html">programa8</a></li>
+                    <li><a href="nine.html">programa9</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="#">otros</a></li>
+        </ul>
+    </nav>
+    <h1>promedio</h1>
+    <label for="numero1">Número 1 (1-10):</label>
+    <input type="number" id="numero1" min="1" max="10">
+    <br>
+    <label for="numero2">Número 2 (1-10):</label>
+    <input type="number" id="numero2" min="1" max="10">
+    <br>
+    <label for="numero3">Número 3 (1-10):</label>
+    <input type="number" id="numero3" min="1" max="10">
+    <br>
+    <button onclick="calcularPromedio()">Calcular Promedio</button>
+    <div id="resultado"></div>
+
+
+    <script>
+        function calcularPromedio() {
+            // Obtener los valores de los tres números
+            var num1 = parseInt(document.getElementById("numero1").value);
+            var num2 = parseInt(document.getElementById("numero2").value);
+            var num3 = parseInt(document.getElementById("numero3").value);
+
+            // Calcular el promedio
+            var promedio = (num1 + num2 + num3) / 3;
+
+            // Verificar si el promedio es mayor que 5 utilizando el operador ternario
+            var resultado = promedio > 5 ? true : false;
+
+            // Mostrar el resultado en un elemento div
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+    
+</body>
+</html>
