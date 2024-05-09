@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu desplegable</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu-horizontal">
+            <li><a href="inicio.html">inicio</a></li>
+            <li>
+                <a href="#">programas javascript</a>
+                <ul class="menu-vertical">
+                    <li><a href="unojava.html">programa 1</a></li>
+                    <li><a href="dosjava.html">programa 2</a></li>
+                    <li><a href="tresjava.html">programa 3</a></li>
+                    <li><a href="cuatrojava.html">programa 4</a></li>
+                    <li><a href="quintojava.html">programa 5</a></li>
+                    <li><a href="sexto.html">programa 6</a></li>
+                    <li><a href="septimojava.html">programa 7</a></li>
+                    <li><a href="octavojava.html">programa 8</a></li>
+                    <li><a href="nuevejava.html">programa 9</a></li>
+                    <li><a href="decimojava.html">programa 10</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">programas php</a>
+                <ul class="menu-vertical">
+                    <li><a href="one.html">programa1</a></li>
+                    <li><a href="two.html">programa2</a></li>
+                    <li><a href="three.html">programa3</a></li>
+                    <li><a href="four.html">programa4</a></li>
+                    <li><a href="five.html">programa5</a></li>
+                    <li><a href="six.html">programa6</a></li>
+                    <li><a href="seven.html">programa7</a></li>
+                    <li><a href="eigh.html">programa8</a></li>
+                    <li><a href="nine.html">programa9</a></li>
+                </ul>
+            </li>
+            <li><a href="#">otros</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>calcular salario neto </h1>
+    <h2>Calculadora de Salario Neto</h2>
+
+<table>
+  <tr>
+    <th>Mes</th>
+    <th>Salario Bruto</th>
+    <th>Días Faltantes</th>
+    <th>Descuento</th>
+    <th>Salario Neto</th>
+  </tr>
+  <tr>
+    <td>Enero</td>
+    <td id="salarioEnero"></td>
+    <td>2</td>
+    <td id="descuentoEnero"></td>
+    <td id="netoEnero"></td>
+  </tr>
+  <tr>
+    <td>Febrero</td>
+    <td id="salarioFebrero"></td>
+    <td>5</td>
+    <td id="descuentoFebrero"></td>
+    <td id="netoFebrero"></td>
+  </tr>
+  <tr>
+    <td>Marzo</td>
+    <td id="salarioMarzo"></td>
+    <td>0</td>
+    <td id="descuentoMarzo"></td>
+    <td id="netoMarzo"></td>
+  </tr>
+</table>
+
+<script>
+// Salario bruto mensual
+var salarioBruto = 4000;
+// Porcentaje de impuesto cuando no faltan días
+var impuestoPorcentaje = 15 / 100;
+// Descuento por día faltante
+var descuentoPorDia = 30;
+
+// Función para calcular el salario neto
+function calcularSalarioNeto(mes, diasFaltantes) {
+  var impuesto;
+  if (diasFaltantes > 0) {
+    impuesto = diasFaltantes * descuentoPorDia;
+  } else {
+    impuesto = salarioBruto * impuestoPorcentaje;
+  }
+  var salarioNeto = salarioBruto - impuesto;
+  
+  document.getElementById("salario" + mes).textContent = "$" + salarioBruto.toFixed(2);
+  document.getElementById("descuento" + mes).textContent = "$" + impuesto.toFixed(2);
+  document.getElementById("neto" + mes).textContent = "$" + salarioNeto.toFixed(2);
+}
+
+// Calcular salario neto para cada mes
+calcularSalarioNeto("Enero", 2);
+calcularSalarioNeto("Febrero", 5);
+calcularSalarioNeto("Marzo", 0);
+</script>
+
+
+    
+</body>
+</html>
